@@ -4,6 +4,7 @@ This Docker image allows defining cron jobs via environment variables and logs t
 - Cron jobs can be defined via environment variables
 - Cron logs can be viewed in the Docker logs
 - Standalone script available for inclusion in existing images
+- Curl
 
 ## Usage ##
 When using this image you can define cron jobs via `CRON_*` environment variables. Every enviroment variable that starts with `CRON_` will be added as a cron entry. The standard and error logs of the cron command can be viewed in the Docker logs.
@@ -15,7 +16,7 @@ Here is a sample docker-compose file that will start 2 cron jobs:
 version: '3'
 services:
   cron:
-    image: morbz/docker-cron
+    image: umutc/docker-cron
     environment:
       - CRON_MINUTE=* * * * * root echo "Hello minute"
       - CRON_HOUR=0 * * * * root echo "Hello hour"
@@ -33,7 +34,7 @@ FROM ubuntu:16.04
 
 # Install cron
 RUN apt-get update \
-	&& apt-get -y install cron \
+	&& apt-get -y install cron curl \
 	&& rm -rf /var/lib/apt/lists/*
 	
 #
