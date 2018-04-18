@@ -1,4 +1,4 @@
-This Docker image allows defining cron jobs via environment variables and logs the cron output to the Docker logs.
+This Docker image allows defining cron jobs via environment variables, curl command and logs the cron output to the Docker logs.
 
 ## Features ##
 - Cron jobs can be defined via environment variables
