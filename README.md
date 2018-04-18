@@ -5,6 +5,7 @@ This Docker image allows defining cron jobs via environment variables, curl comm
 - Cron logs can be viewed in the Docker logs
 - Standalone script available for inclusion in existing images
 - Curl
+- Ping
 
 ## Usage ##
 When using this image you can define cron jobs via `CRON_*` environment variables. Every enviroment variable that starts with `CRON_` will be added as a cron entry. The standard and error logs of the cron command can be viewed in the Docker logs.

@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 
 # Install cron
 RUN apt-get update \
-	&& apt-get -y install cron curl \
+	&& apt-get -y install cron curl ping \
 	&& rm -rf /var/lib/apt/lists/*
 
 # Make sure to log to Docker
